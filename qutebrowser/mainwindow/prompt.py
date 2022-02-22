@@ -640,7 +640,7 @@ class FilenamePrompt(_BasePrompt):
         for row in range(num_rows):
             index = self._file_model.index(row, 0, self._root_index)
             filename = index.data()
-            hidden = self._to_complete not in filename and filename != '..'
+            hidden = self._to_complete not in filename
             self._file_view.setRowHidden(index.row(), index.parent(), hidden)
 
     @pyqtSlot(str)
